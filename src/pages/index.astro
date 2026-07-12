@@ -3,10 +3,9 @@ import {Button} from "../components/Button.tsx";
 import Layout from "../layouts/Layout.astro";
 
 const profile = {
-  name: "huequica",
-  role: "Frontend Engineer & Portfolio Creator",
+  role: "Frontend Engineer, Gamer, Streamer(大嘘)",
   description:
-    "I build clean, usable web experiences with modern tools. Currently exploring Astro, React, and accessible UI patterns.",
+    "だいたいいつもはじめましてと言ってるけど気にしないで",
   links: [
     { label: "Development", href: "/development" },
     { label: "Game", href: "/game" },
@@ -19,8 +18,7 @@ const profile = {
 <Layout>
   <section class="hero relative min-h-[calc(100vh-5rem)] bg-transparent text-slate-100">
     <div class="hero-body mx-auto flex min-h-[calc(100vh-5rem)] max-w-6xl flex-col justify-center px-6 py-24 sm:px-8 lg:px-12">
-      <p class="text-sm uppercase tracking-[0.3em] text-violet-300">Hi, I&apos;m</p>
-      <h1 class="mt-4 max-w-4xl text-5xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl">{profile.name}</h1>
+      <h1 class="mt-4 max-w-4xl text-5xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl">はじめまして</h1>
       <p class="mt-6 text-xl font-semibold text-violet-300 sm:text-2xl">{profile.role}</p>
       <p class="mt-8 max-w-3xl leading-8 text-slate-300 sm:text-lg">{profile.description}</p>
       <div class="mt-12 flex flex-wrap gap-4">
