@@ -20,8 +20,11 @@
   },
   "javascript": {
     "formatter": {
-      "quoteStyle": "double"
+      "quoteStyle": "single"
     }
+  },
+  "html": {
+    "experimentalFullSupportEnabled": true
   },
   "assist": {
     "enabled": true,
