@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.tsx";
 
 const profile = {
   name: "huequica",
@@ -23,7 +24,7 @@ const profile = {
       <p class="mt-8 max-w-3xl leading-8 text-slate-300 sm:text-lg">{profile.description}</p>
       <div class="mt-12 flex flex-wrap gap-4">
         {profile.links.map((link) => (
-          <a class="inline-flex items-center justify-center rounded-full bg-violet-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-violet-400" href={link.href}>{link.label}</a>
+          <Button href={link.href}>{link.label}</Button>
         ))}
       </div>
     </div>

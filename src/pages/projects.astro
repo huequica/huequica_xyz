@@ -1,5 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import SectionHeader from "../components/SectionHeader.tsx";
+import ProjectCard from "../components/ProjectCard.tsx";
 
 const projects = [
   {
@@ -21,20 +23,10 @@ const projects = [
 
 <Layout>
   <section id="projects" class="max-w-5xl mx-auto px-6 py-16">
-    <div class="mb-10 flex flex-col gap-4">
-      <p class="text-sm uppercase tracking-[0.2em] text-violet-300">Projects</p>
-      <h2 class="text-4xl font-semibold tracking-tight text-white sm:text-5xl">Selected work</h2>
-    </div>
+    <SectionHeader label="Projects" title="Selected work" />
     <div class="grid gap-6 sm:grid-cols-2">
       {projects.map((project) => (
-        <article class="rounded-[1.25rem] bg-white/5 p-7 shadow-[0_18px_50px_rgba(0,0,0,0.05)]">
-          <div>
-            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-violet-300">{project.type}</p>
-            <h3 class="mt-4 text-2xl font-semibold text-white">{project.name}</h3>
-            <p class="mt-3 text-slate-300 leading-7">{project.description}</p>
-          </div>
-          <a class="mt-6 inline-block text-sm font-semibold text-slate-100 hover:text-white" href={project.url} target="_blank" rel="noreferrer">View project →</a>
-        </article>
+        <ProjectCard project={project} />
       ))}
     </div>
   </section>
