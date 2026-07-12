@@ -1,3 +1,5 @@
+import type { FC } from 'react';
+
 export interface Project {
   name: string;
   description: string;
@@ -5,11 +7,11 @@ export interface Project {
   url: string;
 }
 
-export interface ProjectCardProps {
+interface ProjectCardProps {
   project: Project;
 }
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+export const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
   return (
     <article className="rounded-[1.25rem] bg-white/5 p-7 shadow-[0_18px_50px_rgba(0,0,0,0.05)]">
       <div>
@@ -31,4 +33,4 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       </a>
     </article>
   );
-}
+};

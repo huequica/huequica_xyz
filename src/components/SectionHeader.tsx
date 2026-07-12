@@ -1,9 +1,11 @@
-export interface SectionHeaderProps {
+import type { FC } from 'react';
+
+interface SectionHeaderProps {
   label: string;
   title: string;
 }
 
-export default function SectionHeader({ label, title }: SectionHeaderProps) {
+export const SectionHeader: FC<SectionHeaderProps> = ({ label, title }) => {
   return (
     <div className="mb-10 flex flex-col gap-4">
       <p className="text-sm uppercase tracking-[0.2em] text-violet-300">
@@ -14,4 +16,4 @@ export default function SectionHeader({ label, title }: SectionHeaderProps) {
       </h2>
     </div>
   );
-}
+};
