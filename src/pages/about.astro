@@ -1,0 +1,20 @@
+---
+import Layout from "../layouts/Layout.astro";
+import AboutSection from "../components/AboutSection.astro";
+
+const skills = [
+  "Astro",
+  "React",
+  "TypeScript",
+  "Accessibility",
+  "UI Design",
+  "Performance",
+];
+
+const summary =
+  "I bring polished frontend experiences to life by combining thoughtful design, fast loading interfaces, and modern developer workflows. I enjoy creating responsive sites that feel intuitive on every device.";
+---
+
+<Layout>
+  <AboutSection id="about" skills={skills} summary={summary} />
+</Layout>

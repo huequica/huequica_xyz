@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProjectsSection from "../components/ProjectsSection.astro";
+
+const projects = [
+  {
+    name: "Personal portfolio",
+    description:
+      "A minimal and responsive site to showcase projects, skills, and contact details.",
+    type: "Web Design",
+    url: "https://github.com/huequica",
+  },
+  {
+    name: "Component library",
+    description:
+      "Reusable UI components built for performance and maintainability.",
+    type: "Frontend",
+    url: "https://github.com/huequica",
+  },
+];
+---
+
+<Layout>
+  <ProjectsSection id="projects" projects={projects} />
+</Layout>
