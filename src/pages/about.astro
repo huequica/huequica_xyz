@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import AboutSection from "../components/AboutSection.astro";
 
 const skills = [
   "Astro",
@@ -16,5 +15,18 @@ const summary =
 ---
 
 <Layout>
-  <AboutSection id="about" skills={skills} summary={summary} />
+  <section id="about" class="max-w-5xl mx-auto px-6 py-16">
+    <div class="mb-10 flex flex-col gap-4">
+      <p class="text-sm uppercase tracking-[0.2em] text-violet-300">About</p>
+      <h2 class="text-4xl font-semibold tracking-tight text-white sm:text-5xl">A quick look</h2>
+    </div>
+    <div class="grid gap-10 lg:grid-cols-[1.3fr_0.7fr] lg:items-start">
+      <div class="text-slate-300 leading-8">{summary}</div>
+      <div class="grid gap-3">
+        {skills.map((skill) => (
+          <span class="inline-flex items-center justify-center rounded-full bg-violet-500/10 px-4 py-2 text-sm font-semibold text-violet-300">{skill}</span>
+        ))}
+      </div>
+    </div>
+  </section>
 </Layout>

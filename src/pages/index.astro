@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import ProfileCard from "../components/ProfileCard.astro";
 
 const profile = {
   name: "huequica",
@@ -16,5 +15,22 @@ const profile = {
 ---
 
 <Layout>
-  <ProfileCard {...profile} />
+  <article class="max-w-5xl mx-auto px-6 py-16">
+    <div class="grid gap-12 lg:grid-cols-[1.2fr_1fr] items-center">
+      <div>
+        <p class="mb-4 text-sm uppercase tracking-[0.25em] text-slate-400">Hi, I&apos;m</p>
+        <h1 class="text-5xl font-black tracking-tight text-white sm:text-6xl">{profile.name}</h1>
+        <p class="mt-6 text-xl font-semibold text-violet-300">{profile.role}</p>
+        <p class="mt-5 max-w-2xl leading-8 text-slate-300">{profile.description}</p>
+        <div class="mt-10 flex flex-wrap gap-4">
+          {profile.links.map((link) => (
+            <a class="inline-flex items-center justify-center rounded-full bg-violet-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-violet-400" href={link.href}>{link.label}</a>
+          ))}
+        </div>
+      </div>
+      <div class="grid place-items-center">
+        <div class="w-full max-w-xs aspect-square rounded-[1.5rem] bg-gradient-to-br from-violet-500 to-blue-500 grid place-items-center text-[clamp(4rem,8vw,6rem)] font-extrabold text-white">{profile.name.charAt(0)}</div>
+      </div>
+    </div>
+  </article>
 </Layout>
