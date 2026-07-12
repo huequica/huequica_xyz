@@ -1,15 +1,18 @@
 ---
 import "../styles/global.css";
+
+const {title} = Astro.props;
+const pageTitle = title ? `${title} | huequica.xyz` : "huequica.xyz";
 ---
 <!doctype html>
-<html lang="en">
+<html lang="ja">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>huequica.xyz</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body class="min-h-screen bg-slate-950 text-slate-100 antialiased font-sans">
 		<div class="page-shell relative min-h-screen overflow-hidden">
@@ -20,9 +23,10 @@ import "../styles/global.css";
 					<div class="brand text-sm uppercase tracking-[0.2em] font-black text-slate-100">huequica.xyz</div>
 					<nav class="flex gap-4">
 						<a class="text-sm text-slate-300 transition hover:text-slate-100 focus-visible:text-slate-100" href="/">Home</a>
-						<a class="text-sm text-slate-300 transition hover:text-slate-100 focus-visible:text-slate-100" href="/about">About</a>
-						<a class="text-sm text-slate-300 transition hover:text-slate-100 focus-visible:text-slate-100" href="/projects">Projects</a>
-						<a class="text-sm text-slate-300 transition hover:text-slate-100 focus-visible:text-slate-100" href="/contact">Contact</a>
+						<a class="text-sm text-slate-300 transition hover:text-slate-100 focus-visible:text-slate-100" href="/development">Development</a>
+						<a class="text-sm text-slate-300 transition hover:text-slate-100 focus-visible:text-slate-100" href="/game">Game</a>
+						<a class="text-sm text-slate-300 transition hover:text-slate-100 focus-visible:text-slate-100" href="/live">Live</a>
+						<a class="text-sm text-slate-300 transition hover:text-slate-100 focus-visible:text-slate-100" href="/other">Other</a>
 					</nav>
 				</header>
 				<main class="flex-1">
