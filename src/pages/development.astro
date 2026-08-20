@@ -1,11 +1,11 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import {SkillPill} from "../components/SkillPill";
+import { SkillPill } from '../components/SkillPill';
+import Layout from '../layouts/Layout.astro';
 
 const skills = [
-  { name: "TypeScript", color: {background: "bg-blue-600" }},
-  { name: "React", color: {background: "bg-cyan-500" }},
-  { name: "Vue", color: {background: "bg-green-500" }},
+  { name: 'TypeScript', color: { background: 'bg-blue-600' } },
+  { name: 'React', color: { background: 'bg-cyan-500' } },
+  { name: 'Vue', color: { background: 'bg-green-500' } },
 ];
 
 // TODO: 代表的なプロジェクトの見せ方が決まったらコメントアウトを外す
@@ -19,8 +19,12 @@ const skills = [
 <Layout title="Development">
   <section class="max-w-5xl mx-auto px-6 py-16">
     <div class="mb-10 flex flex-col gap-4">
-      <p class="text-sm uppercase tracking-[0.2em] text-violet-300">Love Techs</p>
-      <h2 class="text-4xl font-semibold tracking-tight text-white sm:text-5xl">好きな技術</h2>
+      <p class="text-sm uppercase tracking-[0.2em] text-violet-300">
+        Love Techs
+      </p>
+      <h2 class="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+        好きな技術
+      </h2>
     </div>
     <div class="mt-8 flex flex-wrap gap-4">
       {skills.map((skill) => (
@@ -30,8 +34,12 @@ const skills = [
   </section>
   <section class="max-w-5xl mx-auto px-6 py-16">
     <div class="mb-10 flex flex-col gap-4">
-      <p class="text-sm uppercase tracking-[0.2em] text-violet-300">Featured Projects</p>
-      <h2 class="text-4xl font-semibold tracking-tight text-white sm:text-5xl">代表的なプロジェクト</h2>
+      <p class="text-sm uppercase tracking-[0.2em] text-violet-300">
+        Featured Projects
+      </p>
+      <h2 class="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+        代表的なプロジェクト
+      </h2>
     </div>
     <div class="flex flex-wrap">
       <!-- TODO: 代表的なプロジェクトを入れていく、デザインや導線の置き方がまだフワ付いているので後回し -->

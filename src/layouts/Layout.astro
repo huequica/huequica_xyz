@@ -1,44 +1,65 @@
 ---
-import "../styles/global.css";
-import { getImage } from "astro:assets";
-import { ClientRouter } from "astro:transitions";
-import rawBackgroundImage from "../../public/background.jpg";
+import '../styles/global.css';
+import { getImage } from 'astro:assets';
+import { ClientRouter } from 'astro:transitions';
+import type { ComponentProps } from 'react';
+import rawBackgroundImage from '../../public/background.jpg';
+import { NavBarAnchor } from '../components/NavBarAnchor';
 
 const { title } = Astro.props;
-const pageTitle = title ? `${title} | huequica.xyz` : "huequica.xyz";
+const pageTitle = title ? `${title} | huequica.xyz` : 'huequica.xyz';
 
-const backgroundImage = await getImage({src: rawBackgroundImage, format: "jpg"});
+const backgroundImage = await getImage({
+  src: rawBackgroundImage,
+  format: 'jpg',
+});
+
+const navBarAnchorItems: Array<ComponentProps<typeof NavBarAnchor>> = [
+  { label: 'Home', href: '/' },
+  { label: 'Development', href: '/development' },
+  { label: 'Game', href: '/game' },
+  { label: 'Live', href: '/live' },
+  { label: 'Other', href: '/other' },
+];
 ---
+
 <!doctype html>
 <html lang="ja">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-		<ClientRouter />
-	</head>
-	<body class="min-h-screen bg-slate-950 text-slate-100 antialiased font-sans">
-		<div class="page-shell relative min-h-screen overflow-hidden">
-			<div class="absolute inset-0 bg-cover bg-center" style={`background-image: url(${backgroundImage.src});`} />
-			<div class="absolute inset-0 bg-slate-950/70 backdrop-blur-sm" />
-			<div class="relative z-10 flex min-h-screen flex-col">
-				<header class="sticky top-0 z-20 flex h-20 items-center justify-between gap-6 px-6 bg-slate-950/70 backdrop-blur-2xl border-b border-white/10">
-					<div class="brand text-sm uppercase tracking-[0.2em] font-black text-slate-100">huequica.xyz</div>
-					<nav class="flex gap-4">
-						<a class="text-sm text-slate-300 transition hover:text-slate-100 focus-visible:text-slate-100" href="/">Home</a>
-						<a class="text-sm text-slate-300 transition hover:text-slate-100 focus-visible:text-slate-100" href="/development">Development</a>
-						<a class="text-sm text-slate-300 transition hover:text-slate-100 focus-visible:text-slate-100" href="/game">Game</a>
-						<a class="text-sm text-slate-300 transition hover:text-slate-100 focus-visible:text-slate-100" href="/live">Live</a>
-						<a class="text-sm text-slate-300 transition hover:text-slate-100 focus-visible:text-slate-100" href="/other">Other</a>
-					</nav>
-				</header>
-				<main class="flex-1">
-					<slot />
-				</main>
-			</div>
-		</div>
-	</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="generator" content={Astro.generator}>
+    <title>{pageTitle}</title>
+    <ClientRouter />
+  </head>
+  <body class="min-h-screen bg-slate-950 text-slate-100 antialiased font-sans">
+    <div class="page-shell relative min-h-screen overflow-hidden">
+      <div
+        class="absolute inset-0 bg-cover bg-center"
+        style={`background-image: url(${backgroundImage.src});`}
+      />
+      <div class="absolute inset-0 bg-slate-950/70 backdrop-blur-sm" />
+      <div class="relative z-10 flex min-h-screen flex-col">
+        <header
+          class="sticky top-0 z-20 flex h-20 items-center justify-between gap-6 px-6 bg-slate-950/70 backdrop-blur-2xl border-b border-white/10"
+        >
+          <div
+            class="brand text-sm uppercase tracking-[0.2em] font-black text-slate-100"
+          >
+            huequica.xyz
+          </div>
+          <nav class="flex gap-4">
+            {navBarAnchorItems.map((anchor) => (
+							<NavBarAnchor href={anchor.href} label={anchor.label} />
+						))}
+          </nav>
+        </header>
+        <main class="flex-1">
+          <slot />
+        </main>
+      </div>
+    </div>
+  </body>
 </html>

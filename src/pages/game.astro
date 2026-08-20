@@ -1,38 +1,41 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from '../layouts/Layout.astro';
 
 const loveGames = [
-  { name: "ゼンレスゾーンゼロ", 
-    url: "https://www.zenlesszonezero.com/",
-    description: "ｾﾞｿﾞｾﾞという略称を使ってます。リリース初日からずっとやってる",
-    color:"bg-gray-800"
+  {
+    name: 'ゼンレスゾーンゼロ',
+    url: 'https://www.zenlesszonezero.com/',
+    description: 'ｾﾞｿﾞｾﾞという略称を使ってます。リリース初日からずっとやってる',
+    color: 'bg-gray-800',
   },
   {
-    name: "Valorant",
-    url: "https://playvalorant.com/ja-jp/",
-    description: "最近始めた。マジでへたくそ",
-    color:"bg-red-800"
+    name: 'Valorant',
+    url: 'https://playvalorant.com/ja-jp/',
+    description: '最近始めた。マジでへたくそ',
+    color: 'bg-red-800',
   },
   {
-    name: "Apex Legends",
-    url: "https://www.ea.com/ja-jp/games/apex-legends",
-    description: "こちらも割と最近寄り、へたくそだけどおもろい",
-    color:"bg-orange-800"
+    name: 'Apex Legends',
+    url: 'https://www.ea.com/ja-jp/games/apex-legends',
+    description: 'こちらも割と最近寄り、へたくそだけどおもろい',
+    color: 'bg-orange-800',
   },
   {
-    name: "運命のトリガー",
-    url: "https://fatetrigger.com/ja-jp/#/",
-    description: "おねがいだからはやくリリースして",
-    color:"bg-blue-800"
+    name: '運命のトリガー',
+    url: 'https://fatetrigger.com/ja-jp/#/',
+    description: 'おねがいだからはやくリリースして',
+    color: 'bg-blue-800',
   },
-]
+];
 ---
 
 <Layout title="Game">
   <section class="max-w-5xl mx-auto px-6 py-16">
     <div class="mb-10 flex flex-col gap-4">
       <p class="text-sm uppercase tracking-[0.2em] text-violet-300">Game</p>
-      <h2 class="text-4xl font-semibold tracking-tight text-white sm:text-5xl">やってきたゲーム</h2>
+      <h2 class="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+        やってきたゲーム
+      </h2>
     </div>
     <p class="text-slate-300 leading-8">
       Hoyoverse ゲームや FPS, その他をちまちま触ってます。具体的には以下
