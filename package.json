@@ -11,7 +11,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "check": "biome check",
-    "check:fix": "biome check --write"
+    "check:fix": "biome check --write",
+    "deploy": "pnpm build && wrangler deploy"
   },
   "dependencies": {
     "@astrojs/react": "^6.0.1",
